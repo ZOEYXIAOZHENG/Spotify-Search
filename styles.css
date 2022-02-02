@@ -21,10 +21,8 @@ body {
 
 header {
     font-weight: bolder;
-    font-size: 56px;
+    font-size: 60px;
     padding: 30px;
-    /* background: linear-gradient(hsl(128, 76%, 55%), rgb(229, 247, 32)); */
-    width: 567px;
     color: rgb(75, 77, 82);
 }
 
@@ -51,9 +49,9 @@ button {
 }
 .result-item {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     padding-top: 30px;
-    padding-left: 50px;
+    padding-left: 10vw;
 }
 .result-text {
     font-size: medium;
@@ -64,10 +62,20 @@ button {
     padding-left: 100px;
 }
 img {
-    width: 240px;
-    height: 320px;
+    width: 20vw;
+    height: 36vh;
     object-fit: cover;
     transform: skew(10deg);
+}
+img:hover {
+    transform: scale(1.2);
+}
+a {
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(238, 62, 39);
+    text-decoration: underline;
 }
 .moreButton {
     margin-top: 30px;

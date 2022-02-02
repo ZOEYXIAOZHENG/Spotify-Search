@@ -28,12 +28,16 @@
                         imgUrl = responseData.items[i].images[0].url;
                     }
 
+                    console.log(responseData.items[i].external_urls.spotify);
+
                     results +=
                         "<div class='result-item'><img src='" +
                         imgUrl +
-                        "'/><div class='result-text'>" +
+                        "'/><a class='result-text' href=" +
+                        responseData.items[i].external_urls.spotify +
+                        ">" +
                         responseData.items[i].name +
-                        "</div></div>";
+                        "</a></div>";
                 }
 
                 if (responseData.items.length == 0) {
@@ -42,7 +46,7 @@
 
                 $("#results-container").html(results);
 
-                // ----------if there is more results to get, add "MORE" button--------
+                // ----------if want to load more results, add "MORE" button--------
 
                 nextUrl =
                     responseData.next &&
@@ -60,7 +64,7 @@
                 }
             },
         });
-    }); // closes submit btn evt listener
+    }); // closes submit btn event listener
 
     $(".moreButton").on("click", function () {
         $.ajax({
@@ -72,8 +76,6 @@
 
                 var results = "";
                 for (var i = 0; i < responseData.items.length; i++) {
-                    // to set the image
-                    // assume there is no image
                     var imgUrl = "";
                     // in case spotify gives me an actual image, I want to reassign value
                     if (responseData.items[i].images.length > 0) {
@@ -83,14 +85,14 @@
                     results +=
                         "<div class='result-item'><img src='" +
                         imgUrl +
-                        "'/><div class='result-text'>" +
+                        "'/><a class='result-text' href=" +
+                        responseData.items[i].external_urls.spotify +
+                        ">" +
                         responseData.items[i].name +
-                        "</div></div>";
+                        "</a></div>";
                 }
 
                 $("#results-container").append(results);
-
-                // if there is more results to get, add "MORE" button.
 
                 nextUrl =
                     responseData.next &&
@@ -122,8 +124,7 @@
 
                     var results = "";
                     for (var i = 0; i < responseData.items.length; i++) {
-                        // to set the image
-                        // assume there is no image
+                        // to set the image,assume there is no image
                         var imgUrl = "";
                         // in case spotify gives me an actual image, I want to reassign value
                         if (responseData.items[i].images.length > 0) {
@@ -159,7 +160,7 @@
             setTimeout(checkScrollPosition, 500);
         }
     }
-})(); // closes the iife
+})(); // closes the IIFE
 
 //================================Second Version==================================
 // (function () {
