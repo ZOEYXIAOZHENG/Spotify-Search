@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    font-family: Didot;
+}
+
+body {
+    background-image: url(assets/bgpic.jpg);
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    margin-top: 100px;
+    gap: 20px;
+}
+.together {
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+}
+
+header {
+    font-weight: bolder;
+    font-size: 56px;
+    padding: 30px;
+    /* background: linear-gradient(hsl(128, 76%, 55%), rgb(229, 247, 32)); */
+    width: 567px;
+    color: rgb(75, 77, 82);
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: darkgray;
+    border: 3px grey solid;
+}
+select {
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border: 3px grey solid;
+}
+button {
+    width: 80px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+    border: 3px grey solid;
+    color: rgb(75, 77, 82);
+}
+.result-item {
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+.result-text {
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 28px;
+    padding-left: 100px;
+}
+img {
+    width: 240px;
+    height: 320px;
+    object-fit: cover;
+    transform: skew(10deg);
+}
+.moreButton {
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(237, 231, 231);
+    visibility: hidden;
+    border: rgb(19, 18, 18) 2px solid;
+}
+#hint {
+    visibility: hidden;
+}
+.on {
+    visibility: visible;
+}
